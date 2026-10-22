@@ -532,4 +532,80 @@ html[data-theme="dark"] .project-tag {
   .theme-toggle-text {
     display: none;
   }
+}/* Floating draggable AI chatbot */
+#chatbot-toggle {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 2px solid #e5b72f;
+  background: #102f50;
+  color: white;
+  font-size: 28px;
+  cursor: grab;
+  z-index: 10000;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+  touch-action: none;
+}
+
+#chatbot-toggle:active {
+  cursor: grabbing;
+}
+
+#chatbot.chatbot-hidden {
+  display: none;
+}
+
+#chatbot {
+  position: fixed;
+  right: 24px;
+  bottom: 96px;
+  width: min(380px, calc(100vw - 32px));
+  max-height: 70vh;
+  overflow-y: auto;
+  box-sizing: border-box;
+  z-index: 9999;
+  margin: 0;
+  padding: 20px;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: var(--bg-alt);
+  box-shadow: var(--shadow);
+}
+
+#chatbot .container {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 0;
+}
+
+#chatbot #chat-messages {
+  overflow-wrap: anywhere;
+}
+
+#chatbot #chat-form {
+  display: flex;
+  gap: 8px;
+}
+
+#chatbot #chat-input {
+  min-width: 0;
+  flex: 1;
+}
+
+@media (max-width: 480px) {
+  #chatbot {
+    right: 12px;
+    bottom: 86px;
+    width: calc(100vw - 24px);
+    max-height: 65vh;
+  }
+
+  #chatbot-toggle {
+    right: 18px;
+    bottom: 18px;
+  }
 }
