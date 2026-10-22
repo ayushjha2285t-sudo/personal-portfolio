@@ -225,4 +225,22 @@
       }, 250);
     }
   });
+})();// Floating chatbot open/close
+(() => {
+  const button = document.getElementById("chatbot-toggle");
+  const chat = document.getElementById("chatbot");
+
+  if (!button || !chat) return;
+
+  button.addEventListener("click", (event) => {
+    if (button.dataset.dragged === "true") {
+      delete button.dataset.dragged;
+      return;
+    }
+
+    const isHidden = chat.classList.toggle("chatbot-hidden");
+
+    button.setAttribute("aria-expanded", String(!isHidden));
+    chat.setAttribute("aria-hidden", String(isHidden));
+  });
 })();
