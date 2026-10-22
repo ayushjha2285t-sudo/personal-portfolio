@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Personal portfolio of Ayush Jha, B.Tech CSE student at JECRC University."
+    />
+    <title>Ayush Jha | Portfolio</title>
+    <!-- Styles live in a separate file so HTML stays easy to read. -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="logo" href="#home">Ayush Jha</a>
+
+        <!-- Desktop navigation. On small screens this becomes a slide-down menu. -->
+        <nav class="site-nav" id="primary-nav" aria-label="Primary">
+          <ul class="nav-list">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+
+        <div class="header-actions">
+          <button
+            type="button"
+            class="theme-toggle"
+            id="theme-toggle"
+            aria-label="Switch to dark mode"
+          >
+            <span class="theme-toggle-icon" aria-hidden="true">🌙</span>
+            <span class="theme-toggle-text">Dark</span>
+          </button>
+
+          <button
+            type="button"
+            class="nav-toggle"
+            id="nav-toggle"
+            aria-expanded="false"
+            aria-controls="primary-nav"
+            aria-label="Open menu"
+          >
+            <span class="nav-toggle-bar"></span>
+            <span class="nav-toggle-bar"></span>
+            <span class="nav-toggle-bar"></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main id="main">
+      <!-- HOME -->
+      <section class="hero" id="home">
+        <div class="container hero-inner">
+          <p class="eyebrow">B.Tech CSE Core · JECRC University</p>
+          <h1>Ayush Jha</h1>
+          <p class="hero-lead">
+            I am a computer science student building a foundation in software
+            development. I am currently learning C++ and data structures, and I
+            am using this portfolio to practise clean HTML, CSS, and JavaScript.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#projects">View projects</a>
+            <a class="btn btn-secondary" href="#contact">Contact me</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ABOUT -->
+      <section class="section" id="about">
+        <div class="container">
+          <h2>About Me</h2>
+          <p>
+            My name is Ayush Jha. I study B.Tech CSE Core at JECRC University
+            and I am interested in software development. I am still at the
+            beginner stage: I am practising C++ and DSA, and I am learning how
+            to structure a real website with separate HTML, CSS, and JavaScript
+            files.
+          </p>
+          <p>
+            This site is the first version of my college portfolio project. It
+            presents my education, current skills, and early projects honestly.
+            A chatbot powered by an API is planned for a later version and is
+            not included yet.
+          </p>
+        </div>
+      </section>
+
+      <!-- EDUCATION -->
+      <section class="section section-alt" id="education">
+        <div class="container">
+          <h2>Education</h2>
+          <article class="edu-card">
+            <h3>B.Tech in Computer Science and Engineering (Core)</h3>
+            <p class="edu-meta">JECRC University</p>
+            <p>
+              I am completing an undergraduate degree in Computer Science and
+              Engineering with a core CSE focus. Coursework and self-study
+              currently emphasise programming fundamentals, C++, and data
+              structures and algorithms.
+            </p>
+            <p class="placeholder-note">
+              PLACEHOLDER: start year, expected graduation year, CGPA (add only
+              if you want them public).
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <!-- SKILLS -->
+      <section class="section" id="skills">
+        <div class="container">
+          <h2>Skills</h2>
+          <p>
+            These are skills I am actively learning. I am a beginner, so this
+            list is honest rather than a claim of professional expertise.
+          </p>
+          <ul class="skill-list">
+            <li>
+              <strong>C++</strong>
+              <span>Beginner — syntax, basic programs, and practice problems</span>
+            </li>
+            <li>
+              <strong>DSA</strong>
+              <span>Beginner — learning core data structures and algorithms</span>
+            </li>
+            <li>
+              <strong>HTML, CSS, JavaScript</strong>
+              <span>Beginner — this portfolio is my first structured web project</span>
+            </li>
+            <li>
+              <strong>Python</strong>
+              <span>Beginner — small programs and code-cleanup practice</span>
+            </li>
+            <li>
+              <strong>Cursor AI</strong>
+              <span>Using AI tools to understand code, fix bugs, and learn faster</span>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- PROJECTS -->
+      <section class="section section-alt" id="projects">
+        <div class="container">
+          <h2>My Projects</h2>
+          <p>
+            Five early projects from my learning path. Use search or filters to
+            narrow the list. Repository and live-demo links are placeholders
+            until those URLs exist.
+          </p>
+
+          <div class="project-toolbar">
+            <label class="search-label" for="project-search">Search projects</label>
+            <input
+              type="search"
+              id="project-search"
+              placeholder="Search by name, description, or technology"
+            />
+
+            <fieldset class="filter-group">
+              <legend>Filter by category</legend>
+              <button type="button" class="filter-btn is-active" data-filter="all">
+                All
+              </button>
+              <button type="button" class="filter-btn" data-filter="python">
+                Python
+              </button>
+              <button type="button" class="filter-btn" data-filter="web">
+                Web
+              </button>
+              <button type="button" class="filter-btn" data-filter="ai">
+                AI tools
+              </button>
+            </fieldset>
+          </div>
+
+          <p class="filter-status" id="filter-status" aria-live="polite"></p>
+
+          <div class="project-grid" id="project-grid">
+            <article
+              class="project-card"
+              data-category="python"
+              data-search="python programs collection beginner scripts"
+            >
+              <p class="project-tag">Python</p>
+              <h3>Python Programs Collection</h3>
+              <p>
+                A set of small Python programs written while learning the
+                language: input/output, conditions, loops, and simple functions.
+              </p>
+              <p class="project-links">
+                <a href="#projects" data-placeholder-link="true"
+                  >Repository (PLACEHOLDER)</a
+                >
+                <a href="#projects" data-placeholder-link="true"
+                  >Live demo (PLACEHOLDER)</a
+                >
+              </p>
+            </article>
+
+            <article
+              class="project-card"
+              data-category="python"
+              data-search="messy python code improvement refactor cleanup"
+            >
+              <p class="project-tag">Python</p>
+              <h3>Messy Python Code Improvement</h3>
+              <p>
+                Practice in reading unclear Python, renaming variables, adding
+                comments, and making the same logic easier to follow.
+              </p>
+              <p class="project-links">
+                <a href="#projects" data-placeholder-link="true"
+                  >Repository (PLACEHOLDER)</a
+                >
+                <a href="#projects" data-placeholder-link="true"
+                  >Live demo (PLACEHOLDER)</a
+                >
+              </p>
+            </article>
+
+            <article
+              class="project-card"
+              data-category="ai"
+              data-search="bug fixing using cursor ai debugging"
+            >
+              <p class="project-tag">AI tools</p>
+              <h3>Bug Fixing Using Cursor AI</h3>
+              <p>
+                Guided debugging with Cursor: locating errors, reading
+                explanations, applying fixes, and checking that the program
+                still behaves as expected.
+              </p>
+              <p class="project-links">
+                <a href="#projects" data-placeholder-link="true"
+                  >Repository (PLACEHOLDER)</a
+                >
+                <a href="#projects" data-placeholder-link="true"
+                  >Live demo (PLACEHOLDER)</a
+                >
+              </p>
+            </article>
+
+            <article
+              class="project-card"
+              data-category="web"
+              data-search="interactive quiz application html css javascript"
+            >
+              <p class="project-tag">Web</p>
+              <h3>Interactive Quiz Application</h3>
+              <p>
+                A browser quiz with questions, score tracking, and immediate
+                feedback, built with HTML, CSS, and vanilla JavaScript.
+              </p>
+              <p class="project-links">
+                <a href="#projects" data-placeholder-link="true"
+                  >Repository (PLACEHOLDER)</a
+                >
+                <a href="#projects" data-placeholder-link="true"
+                  >Live demo (PLACEHOLDER)</a
+                >
+              </p>
+            </article>
+
+            <article
+              class="project-card"
+              data-category="web"
+              data-search="book reading list application html css javascript"
+            >
+              <p class="project-tag">Web</p>
+              <h3>Book Reading List Application</h3>
+              <p>
+                A simple reading-list page for adding books, marking progress,
+                and keeping a short personal library in the browser.
+              </p>
+              <p class="project-links">
+                <a href="#projects" data-placeholder-link="true"
+                  >Repository (PLACEHOLDER)</a
+                >
+                <a href="#projects" data-placeholder-link="true"
+                  >Live demo (PLACEHOLDER)</a
+                >
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <!-- CONTACT -->
+<section class="section" id="contact">
+  <div class="container">
+    <h2>Contact</h2>
+    <p>
+      Feel free to connect with me through email or my social profiles.
+    </p>
+
+    <ul class="contact-list">
+      <li>
+        <strong>Email:</strong>
+        <a href="mailto:ayushjha2285t@gmail.com">
+          ayushjha2285t@gmail.com
+        </a>
+      </li>
+
+      <li>
+        <strong>GitHub:</strong>
+        <a
+          href="https://github.com/ayushjha2285t-sudo"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Visit my GitHub profile
+        </a>
+      </li>
+
+      <li>
+        <strong>LinkedIn:</strong>
+        <a
+          href="https://www.linkedin.com/in/ayush-jha-2b986437b/?isSelfProfile=true"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Connect with me on LinkedIn
+        </a>
+      </li>
+    </ul>
+  </div>
+</section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p>&copy; 2026 Ayush Jha. Portfolio version 1 (frontend only).</p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
