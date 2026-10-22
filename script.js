@@ -159,4 +159,70 @@
         loading.textContent = "AI: Could not connect. Please try again.";
       }
     });
-  }})();
+  }})();// Make the floating AI chatbot draggable
+(() => {
+  const button = document.getElementById("chatbot-toggle");
+  if (!button) return;
+
+  let dragging = false;
+  let moved = false;
+  let startX = 0;
+  let startY = 0;
+  let startLeft = 0;
+  let startTop = 0;
+
+  button.addEventListener("pointerdown", (event) => {
+    dragging = true;
+    moved = false;
+
+    const rect = button.getBoundingClientRect();
+
+    startX = event.clientX;
+    startY = event.clientY;
+    startLeft = rect.left;
+    startTop = rect.top;
+
+    button.style.left = `${rect.left}px`;
+    button.style.top = `${rect.top}px`;
+    button.style.right = "auto";
+    button.style.bottom = "auto";
+
+    button.setPointerCapture(event.pointerId);
+  });
+
+  button.addEventListener("pointermove", (event) => {
+    if (!dragging) return;
+
+    const dx = event.clientX - startX;
+    const dy = event.clientY - startY;
+
+    if (Math.abs(dx) > 4 || Math.abs(dy) > 4) {
+      moved = true;
+    }
+
+    if (moved) {
+      const left = Math.max(
+        0,
+        Math.min(window.innerWidth - button.offsetWidth, startLeft + dx)
+      );
+      const top = Math.max(
+        0,
+        Math.min(window.innerHeight - button.offsetHeight, startTop + dy)
+      );
+
+      button.style.left = `${left}px`;
+      button.style.top = `${top}px`;
+    }
+  });
+
+  button.addEventListener("pointerup", () => {
+    dragging = false;
+
+    if (moved) {
+      button.dataset.dragged = "true";
+      setTimeout(() => {
+        delete button.dataset.dragged;
+      }, 250);
+    }
+  });
+})();
