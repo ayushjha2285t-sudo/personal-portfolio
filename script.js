@@ -122,4 +122,41 @@
 
   initTheme();
   applyProjectFilters();
-})();
+  // Portfolio AI Chatbot
+  const chatForm = document.getElementById("chat-form");
+  const chatInput = document.getElementById("chat-input");
+  const chatMessages = document.getElementById("chat-messages");
+
+  if (chatForm && chatInput && chatMessages) {
+    chatForm.addEventListener("submit", async function (event) {
+      event.preventDefault();
+
+      const message = chatInput.value.trim();
+      if (!message) return;
+
+      const userMessage = document.createElement("p");
+      userMessage.textContent = "You: " + message;
+      chatMessages.appendChild(userMessage);
+
+      chatInput.value = "";
+
+      const loading = document.createElement("p");
+      loading.textContent = "AI: Thinking...";
+      chatMessages.appendChild(loading);
+
+      try {
+        const response = await fetch("/api/chat", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ message: message })
+        });
+
+        const data = await response.json();
+        loading.textContent = response.ok
+          ? "AI: " + data.reply
+          : "AI: " + (data.error || "Something went wrong.");
+      } catch (error) {
+        loading.textContent = "AI: Could not connect. Please try again.";
+      }
+    });
+  }})();
