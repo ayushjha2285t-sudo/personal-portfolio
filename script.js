@@ -153,7 +153,7 @@
 
         const data = await response.json();
         loading.textContent = response.ok
-          ? "AI: " + data.reply
+          ? "AI: " + data.reply.replace(/\*\*/g, "")
           : "AI: " + (data.error || "Something went wrong.");
       } catch (error) {
         loading.textContent = "AI: Could not connect. Please try again.";
